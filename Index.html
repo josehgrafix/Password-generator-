@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Password generator </title>
+</head>
+<body>
+    <!--random password generator-->
+   <div>
+       <input type="text" id="password" disabled>
+      
+       <button id="click">generate</button>
+       
+       
+   </div> 
+   <style>
+       input {
+           padding:10px;
+           outline:none;
+           display: block;
+       }
+       button {
+           background:rgba(0,0,0,0.8);
+           padding:10px;
+           border-width:0px;
+           margin-top:10px;
+           color:white;
+       }
+   </style>
+  <script>
+    
+let click =document.getElementById('click')
+click.addEventListener('click',()=>{
+  function random(element){
+   // characters to choose from 
+   
+    let characters ='ABCDEFGHIJ1234567890abcdefghijklmnop'
+    let empty=""
+     for(let c =0;c <element;c++){
+         empty+=characters.charAt(Math.floor(Math.random()*characters.length))
+         
+     }  
+     
+    
+let input =document.getElementById('password') 
+    input.value=empty 
+  }
+  random(6)
+})       
+  </script>
+</body>
+</html>
